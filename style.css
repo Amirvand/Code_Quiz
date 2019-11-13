@@ -1,42 +1,42 @@
 *{
-    box-sizing: border-box;
-line-height: 1.5;
+        box-sizing: border-box;
+    line-height: 1.5;
 }
 body {
-background-color: #767;
-font-family: 'Roboto', sans-serif;
+    background-color: #767;
+    font-family: 'Roboto', sans-serif;
 }
 #entire {
-padding: 50px;
-position: relative;
+    padding: 50px;
+    position: relative;
 }
 #test {
-border: #666 3px solid;
-padding: 10px 40px 40px 40px;
-background-color: #ebebeb;
-width: 50%;
+    border: #666 3px solid;
+    padding: 10px 40px 40px 40px;
+    background-color: #ebebeb;
+    width: 50%;
 }
 #container {
-visibility: hidden;
+    visibility: hidden;
 }
 .card {
-width: 50%;
-border: orangered 5px solid;
+    width: 50%;
+    border: orangered 5px solid;
 }
 
 @media only screen and (max-width: 600px) {
-body {
-background-color: #777;
-}
-#entire {
-    width: 100%;
-    padding: 0px;
-    margin: 0 auto;
-}
-#test {
-    width: 100%;
-}
-.card {
-    width: 100%;
-}
+    body {
+    background-color: #777;
+    }
+    #entire {
+        width: 100%;
+        padding: 0px;
+        margin: 0 auto;
+    }
+    #test {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+    }
 }

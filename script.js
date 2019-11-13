@@ -1,12 +1,14 @@
-   // Base Variables
+   // Global variables for quiz
    var pos = 0;
    var correct = 0;
    var containerEl = document.getElementById("container");
    var submitBtn = document.getElementById("submit-button");
-   // Timer
+   // Global Variables for Timer
    var countdown;
    var countdownNumber;
-
+   // Keeping track from pseudocode
+   var test, testStatus, question, choice, choices, chA, chB, chC;
+   
    // The following function will be used to grab various HTML elements
    function get(x) {
        return document.getElementById(x);
@@ -79,4 +81,20 @@
    get("user-score").innerHTML = "Previous score: "+localStorage.getItem("score");
    get("user-initials").innerHTML = "Previous player: "+localStorage.getItem("initials");
    get("submit-button").addEventListener("click", countdownBegin);
-}
+
+// Variables for HTML elements
+var submitBtn = document.getElementById("submit-button");
+var timeDisplay = document.getElementById("time-display");
+var containerEl = document.getElementById("container");
+
+// Variables for function setTime
+var secondsLeft = 75;
+
+function setTime() {
+    renderQuestion();
+    submitBtn.style.visibility = "hidden";
+    containerEl.style.visibility = "visible";
+};
+
+
+submitBtn.addEventListener("click", setTime); 
