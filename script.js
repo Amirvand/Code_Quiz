@@ -1,24 +1,27 @@
-   // Global variables for quiz
+   // Basic Variables
    var pos = 0;
    var correct = 0;
    var containerEl = document.getElementById("container");
    var submitBtn = document.getElementById("submit-button");
-   // Global Variables for Timer
+   //Timer 
    var countdown;
    var countdownNumber;
-   // Keeping track from pseudocode
-   var test, testStatus, question, choice, choices, chA, chB, chC;
+//Overall 
+   var test;
+   var testStatus;
+   var question;
+   //Tracks user choice
+   var choice;
+   var choices;
+   var ansA, ansB, ansC;
    
-   // The following function will be used to grab various HTML elements
    function get(x) {
        return document.getElementById(x);
+    //Grabs the test questions from questions.js 
    }
-   // Functions
    function renderQuestion(){
-       // Make div visible
        containerEl.style.visibility = "visible";
        submitBtn.style.visibility = "hidden";
-       // Quiz Render
        test = get("test");
        if(pos >= questions.length){
            userScore = correct * countdown
@@ -29,15 +32,15 @@
        };
        get("test-status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
        question = questions[pos][0];
-       chA = questions[pos][1];
-       chB = questions[pos][2];
-       chC = questions [pos][3];
+       ansA = questions[pos][1];
+       ansB = questions[pos][2];
+       ansC = questions [pos][3];
        test.innerHTML = "<h3>"+question+"<h3>";
-       test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
-       test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
-       test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
+       test.innerHTML += "<input type='radio' name='choices' value='A'> "+ansA+"<br>";
+       test.innerHTML += "<input type='radio' name='choices' value='B'> "+ansB+"<br>";
+       test.innerHTML += "<input type='radio' name='choices' value='C'> "+ansC+"<br>";
        test.innerHTML += "<button id='test-button' onclick='checkAnswer()' type='button' class='btn btn-secondary'>SUBMIT Answer</button>";
-       
+//Checks if the answer is correct / incorrect, gives user score.
    }
    function checkAnswer(){
        choices = document.getElementsByName("choices");
@@ -82,13 +85,12 @@
    get("user-initials").innerHTML = "Previous player: "+localStorage.getItem("initials");
    get("submit-button").addEventListener("click", countdownBegin);
 
-// Variables for HTML elements
 var submitBtn = document.getElementById("submit-button");
 var timeDisplay = document.getElementById("time-display");
 var containerEl = document.getElementById("container");
 
-// Variables for function setTime
-var secondsLeft = 75;
+//Base Timer Questions*15, should be 15 seconds per question, couldn't get formula to work. 
+var secondsLeft = 30;
 
 function setTime() {
     renderQuestion();
