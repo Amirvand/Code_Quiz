@@ -1,6 +1,10 @@
- The length of the array in `questions.js` determines the length of play. Fifteen seconds per question is a good estimate, so 5 questions will result in a length of play of 75 seconds.
- 
 # Code Quiz : 
+
+This is a very **TIMED** code quiz! You have about 15 seconds per question so good luck!
+
+Run the application to start the quiz, the highscores are saved through your PC. 
+
+Max points as of now is 9, good luck!
 
  ©2019 , Amir Amirvand
 
